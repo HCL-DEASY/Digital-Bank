@@ -19,6 +19,24 @@ pipeline {
             steps {
                 echo 'Deploying....'
             }
+            {
+                cifsPublisher alwaysPublishFromMaster: false, continueOnError: false, failOnError: false, publishers: [[
+                  configName: 'Automic', transfers: [[
+                    cleanRemote: false, 
+                    excludes: '', 
+                    flatten: false, 
+                    makeEmptyDirs: false, 
+                    noDefaultExcludes: false, 
+                    patternSeparator: '[, ]+', 
+                    remoteDirectory: '', 
+                    remoteDirectorySDF: false, 
+                    removePrefix: 'target/', 
+                    sourceFiles: 'target/*.jar', 
+                  usePromotionTimestamp: false, 
+                  useWorkspaceInPromotion: false, 
+                  verbose: true
+                ]]
+            }
         }
     }
 }

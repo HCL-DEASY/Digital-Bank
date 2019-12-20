@@ -7,7 +7,7 @@ pipeline {
                 echo 'Building..'
             }
             {
-                sh "mvn clean package -DskipTests=true"
+                sh "mvn clean package -DbuildNumber=$(BUILD_NUMBER} -DskipTests=true"
             }
         }
         stage('Test') {

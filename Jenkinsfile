@@ -37,6 +37,9 @@ pipeline {
                   verbose: true
                 ]]
             }
+            {
+                createDepPckg appName: 'DIGITALBANK', folder: 'DEFAULT', owner: '100/AUTOMIC/AUTOMIC', pass: 'AUTOMIC', pkgName: '$BUILD_NUMBER', pkgType: 'Deployment', server: 'http://10.0.0.228:80/cda', useCentlCrd: true, user: '100/AUTOMIC/AUTOMIC'
+            }
         }
     }
 }

@@ -19,11 +19,6 @@ pipeline {
             steps {
                 echo 'Deploying....'
             }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
             {
                 execApplnWkf appName: 'DIGITALBANK', executeAt: '', installationMode: 'overwrite', manualConfirmation: 'no', pass: 'AUTOMIC', pkgName: '$BUILD_NUMBER', profile: 'DEV', queue: '', server: 'http://10.0.0.228:80/cda', startAt: 'now', useCentlCrd: true, user: '100/AUTOMIC/AUTOMIC', userGroup: '', workflow: 'DeployDigitalBank'
             }

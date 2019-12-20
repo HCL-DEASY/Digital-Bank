@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                mvn clean install -Dmaven.test.skip=true
+                mvn clean package -DskipTests=true
             }
         }
         stage('Test') {

@@ -7,7 +7,7 @@ pipeline {
                 echo 'Building..'
             }
             {
-                sh "mvn clean package -DbuildNumber=$(BUILD_NUMBER} -DskipTests=true"
+                sh "mvn clean package -DbuildNumber=build.environment.get(""BUILD_NUMBER"") -DskipTests=true"
             }
         }
         stage('Test') {

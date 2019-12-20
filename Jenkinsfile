@@ -5,6 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+            }
+            {
                 mvn clean package -DskipTests=true
             }
         }
